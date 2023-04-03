@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>replit</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <br />
+
+    <div class="menu">
+      <div class="p1Info">
+        <div id="p1Name">Player 1</div>
+
+        <img
+          id="p1"
+          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc20e6c5-7405-4f12-ad3d-0f8a8e55d55a/d57wwjf-680f5762-711d-4aa3-87e4-357a44b9ab3a.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2JjMjBlNmM1LTc0MDUtNGYxMi1hZDNkLTBmOGE4ZTU1ZDU1YVwvZDU3d3dqZi02ODBmNTc2Mi03MTFkLTRhYTMtODdlNC0zNTdhNDRiOWFiM2EuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.DHvOIKgGAXXi0M9lZah4kZSsAUbEXTpggjIkxXy79p0"
+        />
+
+        <div class="playerControls">
+          <div class="AttackDiv">
+            <h3>Q:</h3>
+            <button
+              onclick="player1.strike(player1, player2, player1.attackDmg) && p1attack.play()"
+              id="attack"
+            >
+              Attack
+            </button>
+          </div>
+
+          <div class="HealDiv">
+            <h3>A:</h3>
+            <button onclick="player1.heal(player1) && p1heal.play()" id="heal">
+              Heal
+            </button>
+          </div>
+        </div>
+        <div class="points">Health points:</div>
+        <div id="p1Health">100</div>
+      </div>
+
+      <button id="play">Simulate</button>
+
+      <div class="p2Info">
+        <div id="p2Name">Player 2</div>
+
+        <img
+          id="p2"
+          src="https://66.media.tumblr.com/f2ce3f4c4c0c61558f083e07824ef395/tumblr_n9ffty70Pb1s9ab4to1_400.gif"
+        />
+        <div class="playerControls">
+          <div class="AttackDiv">
+            <h3>P:</h3>
+            <button
+              onclick="player2.strike(player2, player1, player2.attackDmg) && p2attack.play()"
+              id="attack"
+            >
+              Attack
+            </button>
+          </div>
+          <div class="HealDiv">
+            <h3>L:</h3>
+            <button onclick="player2.heal(player2) && p2heal.play()" id="heal">
+              Heal
+            </button>
+          </div>
+        </div>
+        <div class="points">Health points:</div>
+        <div id="p2Health">100</div>
+      </div>
+    </div>
+    <br />
+
+    <div class="resultContainer">
+      <div id="result"></div>
+      <button id="reset" onclick="game.reset(p1,p2)">Reset</button>
+    </div>
+
+    <audio id="p1attack" controls style="display: none">
+      <source src="sounds/fastpunch.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="p1heal" controls style="display: none">
+      <source src="sounds/fastheal.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="p2attack" controls style="display: none">
+      <source src="sounds/quickhit.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="p2heal" controls style="display: none">
+      <source src="sounds/quickheal.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="victory" controls style="display: none">
+      <source src="sounds/victory.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
